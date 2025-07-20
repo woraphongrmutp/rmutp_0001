@@ -1,0 +1,36 @@
+services:
+  db: 
+    image: postgres:latest
+    container_name: my_db_compose
+    ports:
+       - "55432:5432"
+    environment:
+       - POSTGRES_DB=woraphong
+       - POSTGRES_USER=woraphong
+       - POSTGRES_PASSWORD=woraphong
+    networks:
+       - strapi-net
+
+  app:
+    image: prawee/strapi:latest
+    container_name: my_app_compose
+    ports:
+      - "8088:1337"
+    environment:
+      - DATABASE_CLIENT=postgres
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432   #ดูPORTดีดี#
+      - DATABASE_NAME=woraphong
+      - DATABASE_USERNAME=woraphong
+      - DATABASE_PASSWORD=woraphong 
+      - DATABASE_SSL=false 
+
+    depends_on:
+      - db
+    networks:
+      - strapi-net
+
+networks:
+   strapi-net:
+    driver: bridge
+     
