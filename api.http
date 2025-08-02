@@ -1,0 +1,37 @@
+### Register account (Identification)
+POST {{API_URL}}/api/auth/local/register
+Content-Type: application/json
+
+{
+    "username": "{{USER_USERNAME}}",
+    "email": "{{USER_EMAIL}}",
+    "password": "{{USER_PASSWORD}}"
+}
+
+### Get all users
+GET {{API_URL}}/api/users
+Content-Type: application/json
+
+### Authentication (login)
+POST {{API_URL}}/api/auth/local
+Content-Type: application/json
+
+{
+    "identifier": "{{USER_USERNAME}}",
+    "password": "{{USER_PASSWORD}}"
+}
+
+### GET Profile (Authenticated user)
+GET {{API_URL}}/api/users/me
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+### Update Profile (Change username)
+PUT {{API_URL}}/api/users/1
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+{
+    "username": "{{USER_USERNAME}}_user_updated"
+}
+
