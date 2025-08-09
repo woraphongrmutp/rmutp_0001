@@ -1,6 +1,25 @@
 {
   "dependencies": {
     "@prisma/client": "^6.13.0",
+    "express": "^5.1.0",
     "prisma": "^6.13.0"
-  }
+  },
+  "name": "rmutp_0001",
+  "version": "1.0.0",
+  "description": "Woraphong Somphong (Ake)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/woraphongrmutp/rmutp_0001.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/woraphongrmutp/rmutp_0001/issues"
+  },
+  "homepage": "https://github.com/woraphongrmutp/rmutp_0001#readme"
 }
